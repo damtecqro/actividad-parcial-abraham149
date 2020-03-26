@@ -9,7 +9,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
@@ -20,10 +19,12 @@ class AdapterList :RecyclerView.Adapter<AdapterList.ViewHolder>() {
 
     private lateinit var context: Context
     private lateinit var data:JsonArray
+    private lateinit var clickListener: OnPokemonItemClickListener
 
-    fun AdapterList(context:Context,data:JsonArray){
+    fun AdapterList(context:Context,data:JsonArray, listener: OnPokemonItemClickListener){
         this.context = context
         this.data = data
+        this.clickListener = listener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterList.ViewHolder {
@@ -37,8 +38,8 @@ class AdapterList :RecyclerView.Adapter<AdapterList.ViewHolder>() {
 
     override fun onBindViewHolder(holder: AdapterList.ViewHolder, position: Int) {
         var item:JsonObject = data.get(position).asJsonObject
+        holder.bind(item,context, clickListener)
 
-        holder.bind(item,context)
 
     }
 
@@ -46,8 +47,15 @@ class AdapterList :RecyclerView.Adapter<AdapterList.ViewHolder>() {
         private var imagePokemon: ImageView = view.findViewById(R.id.pokemon_image)
         private var namePokemon: TextView   = view.findViewById(R.id.pokemon_name)
 
-        fun bind(item:JsonObject,context: Context){
+
+        fun bind(item:JsonObject,context: Context, action:OnPokemonItemClickListener){
+
+            itemView.setOnClickListener{
+                action.OnItemClick(item, adapterPosition)
+            }
+
             namePokemon.setText(item.get("name").asString)
+
 
             Ion.with(context)
                 .load(item.get("url").asString)
@@ -64,8 +72,6 @@ class AdapterList :RecyclerView.Adapter<AdapterList.ViewHolder>() {
                                     .placeholder(R.drawable.pokemon_logo_min)
                                     .error(R.drawable.pokemon_logo_min)
                                     .into(imagePokemon);
-
-
                             }else{
                                 imagePokemon.setImageDrawable(ContextCompat.getDrawable(context,R.drawable.pokemon_logo_min))
                             }
@@ -76,13 +82,15 @@ class AdapterList :RecyclerView.Adapter<AdapterList.ViewHolder>() {
 
                     }
                 }
-
         }
+
 
     }
 
 
-
+    interface OnPokemonItemClickListener{
+        fun OnItemClick(item: JsonObject, position:Int)
+    }
 
 
 

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    app:cardBackgroundColor="@color/colorPrimary"
+    app:contentPadding="1dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Tabla"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:stretchColumns="1" >
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10px"
+            android:layout_span="2"
+            android:textSize="26sp"
+            android:text="NAME"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:padding="10px"
+            android:textSize="15dp"
+            android:text="Accuracy"
+            />
+        <TextView
+            android:id="@+id/Accuracy"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:background="#73D312"
+            android:padding="10px"
+            android:textSize="20dp"
+            android:text="AN"
+            />
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:padding="10px"
+            android:text="Power"
+            android:textSize="15dp"
+            />
+        <TextView
+            android:id="@+id/Power"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:padding="10px"
+            android:background="#FF4757"
+            android:text="PN"
+            android:textSize="20dp"
+            />
+
+    </TableRow>
+
+</TableLayout>
+</androidx.cardview.widget.CardView>

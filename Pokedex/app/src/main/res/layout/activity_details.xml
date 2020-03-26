@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appBarLayout">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+
+            <ImageView
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                android:id="@+id/pokemon_image_top"
+                android:src="@drawable/pokemon_logo_min"
+                android:layout_gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/pokemon_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="POKEMON NAME"
+                android:textStyle="bold"
+                android:textSize="24sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginTop="2dp"
+                android:layout_marginHorizontal="@dimen/toolbar_size"
+                />
+
+            <TextView
+                android:id="@+id/pokemon_types"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="POKEMON TYPES"
+                android:textSize="20dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:paddingTop="@dimen/fab_margin">
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:text="Speed"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="2dp"
+                            />
+                        <TextView
+                            android:id="@+id/SP_holder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:text="SP"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="2dp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:text="HP"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="2dp"
+                            />
+                        <TextView
+                            android:id="@+id/HP_holder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:text="HP"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="2dp"
+                            />
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:text="Sp DEF"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="2dp"
+                            />
+                        <TextView
+                            android:id="@+id/SPDEF_holder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:text="Sp DEF"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="2dp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:text="Sp. ATK"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="2dp"
+                            />
+                        <TextView
+                            android:id="@+id/SPATK_holder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:text="Sp. ATK"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="2dp"
+                            />
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:text="ATK"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="2dp"
+                            />
+                        <TextView
+                            android:id="@+id/ATK_holder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:text="ATK"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="2dp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:text="DEF"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="2dp"
+                            />
+                        <TextView
+                            android:id="@+id/DEF_holder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:text="DEF"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="2dp"
+                            />
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </RelativeLayout>
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:id="@+id/recycler_view_movs"
+                android:paddingStart="@dimen/fab_margin"
+                android:paddingEnd="@dimen/fab_margin"
+                />
+
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+</RelativeLayout>

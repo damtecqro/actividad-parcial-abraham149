@@ -1,22 +1,22 @@
 package com.test.pokedex.Activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import com.koushikdutta.ion.Ion
 import com.test.pokedex.Adapters.AdapterList
 import com.test.pokedex.R
-
 import kotlinx.android.synthetic.main.activity_list.*
 import org.json.JSONArray
 import org.json.JSONObject
 
-class ActivityList : AppCompatActivity() {
+class ActivityList : AppCompatActivity(), AdapterList.OnPokemonItemClickListener {
 
     private lateinit var linearLayoutManager:LinearLayoutManager
     private lateinit var adapter:AdapterList
@@ -71,13 +71,20 @@ class ActivityList : AppCompatActivity() {
         linearLayoutManager.scrollToPosition(0)
 
         adapter = AdapterList()
-        adapter.AdapterList(this,data)
+        adapter.AdapterList(this,data, this)
 
         recycler_view_list.layoutManager = linearLayoutManager
         recycler_view_list.adapter = adapter
         recycler_view_list.itemAnimator = DefaultItemAnimator()
 
 
+    }
+
+    override fun OnItemClick(item: JsonObject, position: Int) {
+        //Toast.makeText(this, item.get("url").toString(), Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, ActivityDetails::class.java)
+        intent.putExtra("url", item.get("url").asString)
+        startActivity(intent)
     }
 
 }

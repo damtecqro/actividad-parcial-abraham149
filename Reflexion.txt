@@ -1,0 +1,9 @@
+Abraham Lemus Ruiz A01207538
+
+¿Qué fue lo que más se te facilitó de la implementación de la vista? 
+
+Se me facilitó el manejo de datos de Json y acomodarlos en la vista que quería, usando la librería sugerida de Ion. 
+
+¿Qué fue lo que más se te dificultó de la implementación de la vista?
+
+Toda la parte de diseño se me complicó, el diseño del detalle final no es como lo tenía pensado y tardé muchísimo tiempo tratando de entender porqué no funcionaban los diseños que tenía. No sabía como debería ser un diseño óptimo pensado para ambos porttrait y landscape. 
